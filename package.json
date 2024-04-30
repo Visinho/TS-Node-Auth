@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@typegoose/typegoose": "^12.4.0",
+    "@types/uuid": "^9.0.8",
     "argon2": "^0.40.1",
     "config": "^3.3.11",
     "dayjs": "^1.11.11",
@@ -30,6 +31,7 @@
     "nanoid": "^5.0.7",
     "nodemailer": "^6.9.13",
     "pino": "^9.0.0",
+    "uuid": "^9.0.1",
     "zod": "^3.23.5"
   }
 }
