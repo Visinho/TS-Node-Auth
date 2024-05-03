@@ -1,4 +1,4 @@
-import { Severity, getModelForClass, modelOptions, prop, pre, DocumentType } from "@typegoose/typegoose";
+import { Severity, getModelForClass, modelOptions, prop, pre, DocumentType, index } from "@typegoose/typegoose";
 import argon2 from "argon2";
 import { v4 as uuidv4 } from "uuid";
 import log from "../utils/logger";
@@ -14,7 +14,7 @@ import log from "../utils/logger";
     return;
 })
 
-
+@index({ email: 1})
 @modelOptions({
     schemaOptions: {
         timestamps: true
