@@ -7,8 +7,10 @@ export default {
     port: 3000,
     dbUri: process.env.MONGO_URI,
     logLevel: "info",
-    accessTokenPrivateKey: "",
-    refreshTokenPrivateKey: "",
+    accessTokenPrivateKey: process.env.ACCESS_TOKEN_PRIVATE_KEY,
+    accessTokenPublicKey: process.env.ACCESS_TOKEN_PUBLIC_KEY,
+    refreshTokenPrivateKey: process.env.REFRESH_TOKEN_PRIVATE_KEY,
+    refreshTokenPublicKey: process.env.REFRESH_TOKEN_PUBLIC_KEY,
     smtp: {
         user: 'ounup4zotlulfbup@ethereal.email',
         pass: 'PMepRpUK8C6UfESJxp',
