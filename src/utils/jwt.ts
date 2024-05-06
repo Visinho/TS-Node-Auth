@@ -7,7 +7,7 @@ export function signJwt(object: Object, keyName: "accessTokenPrivateKey" | "refr
 
     return jwt.sign(object, signinKey, {
         ...(options && options),
-        algorithm: "RS256",
+        algorithm: "HS256",
     });
 }
 
