@@ -107,3 +107,18 @@ export async function resetPasswordHandler(req: Request<ResetPasswordInput["para
 
     return res.send("Successfully updated user password!")
 }
+
+// export async function getCurrentUserHandler(req: Request, res: Response) {
+//     return res.send(res.locals.user);
+// }
+
+export async function getCurrentUserHandler(req: Request, res: Response) {
+    // Check if user info is available in res.locals.user
+    if (res.locals.user) {
+        // Return the user information as the response
+        return res.send(res.locals.user);
+    } else {
+        // If user info is not available, return an error response
+        return res.status(401).send({ error: "Unauthorized" });
+    }
+}
