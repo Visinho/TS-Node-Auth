@@ -5,15 +5,11 @@ import config from "config";
 const deserializeUser = async (req: Request, res: Response, next: NextFunction) => {
     const accessToken = (req.headers.authorization || "").replace(/^Bearer\s/, "");
 
-    console.log("Access Token", accessToken);
-
     if(!accessToken) {
         return next()
     }
 
-    const decoded = verifyJwt(accessToken, "accessTokenPublicKey");
-
-    console.log("decoded token", decoded);
+    const decoded = verifyJwt(accessToken, "accessTokenPrivateKey");
 
     if(decoded) {
         res.locals.user = decoded;
